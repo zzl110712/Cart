@@ -1,0 +1,8 @@
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin linkTextDecoration {
+  text-decoration: none;
+}
