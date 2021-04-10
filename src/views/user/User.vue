@@ -14,6 +14,7 @@
         v-for="(item, index) of homeIconsList"
         :key="item.desc"
         @touchstart="handleTouchstart($event)"
+        @touchmove="handleTouchMove($event, index)"
         @touchend="handleTouchend($event, index)"
       >
         <img class="icons__item__img" :src="`http://www.dell-lee.com/imgs/vue3/${ item.imgName }.png`" />
@@ -50,6 +51,8 @@ export default {
   setup () {
     const store = useStore()
     const client = reactive({
+      left: 0,
+      top: 0,
       x: 0,
       y: 0
     })
@@ -57,14 +60,27 @@ export default {
     const { handleLogoutClick } = useLogoutEffect()
     const handleTouchstart = (e) => {
       const element = e.targetTouches[0]
-      client.x = element.clientX
-      client.y = element.clientY
+      e.currentTarget.style.opacity = 0.5
+      client.x = element.clientX // 鼠标落点初始位置
+      client.y = element.clientY // 鼠标落点初始位置
+      client.left = element.target.getBoundingClientRect().left // getBoundingClientRect用于获取某个元素相对于视窗的位置集合。集合中有top, right, bottom, left等属性。
+      client.top = element.target.getBoundingClientRect().top
+    }
+    const handleTouchMove = (e, index) => {
+      const element = e.targetTouches[0]
+      // 当前鼠标落点加上元素自身左边距上边距
+      const left = element.clientX - 35
+      const top = element.clientY - 270
+      // 移动当前元素
+      e.currentTarget.style.left = `${left}px`
+      e.currentTarget.style.top = `${top}px`
     }
     const handleTouchend = (e, index) => {
       const end = {
         x: e.changedTouches[0].clientX,
         y: e.changedTouches[0].clientY
       }
+      e.currentTarget.style.opacity = 1
       const width = document.getElementsByClassName('icons')[0].offsetWidth
       const positionX = parseInt(end.x / width * 10)
       let positionY = 1
@@ -133,7 +149,7 @@ export default {
       }
       return left
     }
-    return { leftPosition, homeIconsList, handleLogoutClick, handleTouchend, handleTouchstart }
+    return { leftPosition, homeIconsList, handleLogoutClick, handleTouchMove, handleTouchend, handleTouchstart }
   }
 }
 </script>
