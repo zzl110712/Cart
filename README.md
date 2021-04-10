@@ -1,6 +1,10 @@
 # Cart
 一个基于Vue3.0的移动端购物H5
 
+# Cart项目介绍
+- 一个基于Vue3.0实现的移动端购物车逻辑
+- 用到的技术包括但不限于JavaScript、Vue（3.0）、Sass等
+
 # Cart
 - 克隆项目到本地
 - 命令行中执行npm install
