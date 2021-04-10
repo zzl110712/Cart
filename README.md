@@ -1,6 +1,6 @@
 # Cart项目介绍
 - 一个基于Vue3.0实现的移动端购物车逻辑
-- 用到的技术包括但不限于JavaScript、Vue（3.0）、Sass等
+- 技术包括但不限于JavaScript、Vue（3.0）、Sass等
 
 # 开箱即用
 - 克隆项目到本地
