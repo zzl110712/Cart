@@ -2,7 +2,7 @@
 - 一个基于Vue3.0实现的移动端购物车逻辑
 - 用到的技术包括但不限于JavaScript、Vue（3.0）、Sass等
 
-# Cart
+# 开箱即用
 - 克隆项目到本地
 - 命令行中执行npm install
 - 执行npm run serve
