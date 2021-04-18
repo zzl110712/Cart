@@ -10,7 +10,9 @@
 - 打包执行run build
 
 # 版本更新
-## 0.1.1 
+## 0.1.2
+- 🌟 <code style="margin: 0 1px; background: #f2f4f5; padding: 2px 4px; border-radius: 3px; border: 1px solid #eee;">CartList</code> 新增购物车页面
+## 0.1.1
 - 🌟 <code style="margin: 0 1px; background: #f2f4f5; padding: 2px 4px; border-radius: 3px; border: 1px solid #eee;">User</code> 优化拖拽区域动画
 
 # 特殊感谢
