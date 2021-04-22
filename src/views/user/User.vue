@@ -25,6 +25,7 @@
       <div class="tags__item">优惠券<div class="tags__item__right"><span class="tags__item__text">11</span>张可用<div class="iconfont tags__item__icon">&#xe65e;</div></div></div>
       <div class="tags__item">收货地址<div class="iconfont tags__item__icon">&#xe65e;</div></div>
       <div class="tags__item">意见反馈<div class="iconfont tags__item__icon">&#xe65e;</div></div>
+      <div class="tags__item" @click="goReport">购物报告<div class="iconfont tags__item__icon">&#xe65e;</div></div>
     </div>
   </div>
   <Docker :currentIndex="3" />
@@ -50,6 +51,7 @@ export default {
   components: { Docker },
   setup () {
     const store = useStore()
+    const router = useRouter()
     const client = reactive({
       left: 0,
       top: 0,
@@ -149,7 +151,11 @@ export default {
       }
       return left
     }
-    return { leftPosition, homeIconsList, handleLogoutClick, handleTouchMove, handleTouchend, handleTouchstart }
+
+    const goReport = () => {
+      router.push({ name: 'Report' })
+    }
+    return { leftPosition, homeIconsList, handleLogoutClick, handleTouchMove, handleTouchend, handleTouchstart, goReport }
   }
 }
 </script>
