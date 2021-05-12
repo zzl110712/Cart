@@ -18,4 +18,4 @@
 - 🌟 <code style="margin: 0 1px; background: #f2f4f5; padding: 2px 4px; border-radius: 3px; border: 1px solid #eee;">User</code> 优化拖拽区域动画
 
 # 特别感谢
-@Messi @Dell老师 
+@Dell老师 
